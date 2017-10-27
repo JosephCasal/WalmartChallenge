@@ -33,7 +33,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private OnLoadMoreListener onLoadMoreListener;
     private boolean isLoading;
-    private int visibleThreshold = 10;
+    private int visibleThreshold = 3;
     private int visibleItemCount, lastVisibleItem, totalItemCount;
     private Activity activity;
 
@@ -61,7 +61,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
                     if (!isLoading)
                     {
-                        if (lastVisibleItem >= totalItemCount)
+                        if (lastVisibleItem >= (totalItemCount-visibleThreshold))
                         {
                             isLoading = true;
 //                            Log.v("...", "Last Item Wow !");

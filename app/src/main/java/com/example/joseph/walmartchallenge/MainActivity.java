@@ -117,8 +117,6 @@ public class MainActivity extends AppCompatActivity {
 //                                        contactAdapter.setLoaded();
 
                                         getMoreSearch(search, itemList.size()+1);
-                                        itemListAdapter.notifyDataSetChanged();
-                                        itemListAdapter.setLoaded();
 
                                     }
                                 });
@@ -160,6 +158,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete() {
                         Log.d(TAG, "onComplete: ");
+
+                        itemListAdapter.notifyDataSetChanged();
+                        itemListAdapter.setLoaded();
+
 //                        itemListAdapter = new ItemListAdapter(rvItems, activity, itemList);
 //                        rvItems.setLayoutManager(layoutManager);
 //                        rvItems.setAdapter(itemListAdapter);
